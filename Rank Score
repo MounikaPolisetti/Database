@@ -1,0 +1,4 @@
+SELECT S1.Score AS Score, 
+(SELECT COUNT(DISTINCT(S2.Score)) FROM Scores S2 WHERE S2.Score > S1.score) + 1 AS Rank 
+FROM Scores S1
+ORDER BY Rank;
