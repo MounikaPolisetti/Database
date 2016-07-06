@@ -1,0 +1,4 @@
+select max(Salary) from Employee Emp1 
+where (N-1) = (select COUNT(DISTINCT(Salary)) 
+From Employee Emp2 
+where Emp2.Salary > Emp1.salary)
